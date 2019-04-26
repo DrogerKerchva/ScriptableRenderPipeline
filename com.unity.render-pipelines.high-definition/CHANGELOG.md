@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed a bug that caused nans when material classification was enabled and a tile contained one standard material + a material with transmission.
 - Fixed gradient sky hash that was not using the exposure hash
 - Fixed displayed default FrameSettings in HDRenderPipelineAsset wrongly updated on scripts reload.
+- Fixed issue with LightExplorer when volume have no profile
 
 ### Changed
 - Refactor PixelCoordToViewDirWS to be VR compatible and to compute it only once per frame
