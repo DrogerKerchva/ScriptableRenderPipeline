@@ -19,9 +19,9 @@ namespace UnityEngine.Rendering.LWRP
         FinalBlitPass m_FinalBlitPass;
         CapturePass m_CapturePass;
 
-#if UNITY_EDITOR
-        SceneViewDepthCopyPass m_SceneViewDepthCopyPass;
-#endif
+        #if UNITY_EDITOR
+            SceneViewDepthCopyPass m_SceneViewDepthCopyPass;
+        #endif
 
         RenderTargetHandle m_ActiveCameraColorAttachment;
         RenderTargetHandle m_ActiveCameraDepthAttachment;
@@ -66,9 +66,9 @@ namespace UnityEngine.Rendering.LWRP
             m_CapturePass = new CapturePass(RenderPassEvent.AfterRendering);
             m_FinalBlitPass = new FinalBlitPass(RenderPassEvent.AfterRendering, blitMaterial);
 
-#if UNITY_EDITOR
-            m_SceneViewDepthCopyPass = new SceneViewDepthCopyPass(RenderPassEvent.AfterRendering + 9, copyDepthMaterial);
-#endif
+            #if UNITY_EDITOR
+                m_SceneViewDepthCopyPass = new SceneViewDepthCopyPass(RenderPassEvent.AfterRendering + 9, copyDepthMaterial);
+            #endif
 
             // RenderTexture format depends on camera and pipeline (HDR, non HDR, etc)
             // Samples (MSAA) depend on camera and pipeline
@@ -85,7 +85,7 @@ namespace UnityEngine.Rendering.LWRP
             RenderTextureDescriptor cameraTargetDescriptor = renderingData.cameraData.cameraTargetDescriptor;
 
             // Special path for depth only offscreen cameras. Only write opaques + transparents. 
-            bool isOffscreenDepthTexture = camera.targetTexture != null && camera.targetTexture.format == RenderTextureFormat.Depth;
+            bool isOffscreenDepthTexture = (camera.targetTexture != null) && (camera.targetTexture.format == RenderTextureFormat.Depth);
             if (isOffscreenDepthTexture)
             {
                 ConfigureCameraTarget(BuiltinRenderTextureType.CameraTarget, BuiltinRenderTextureType.CameraTarget);
