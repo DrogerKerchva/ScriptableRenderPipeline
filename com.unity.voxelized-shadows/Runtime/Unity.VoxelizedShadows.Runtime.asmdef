@@ -1,10 +1,6 @@
 {
-    "name": "Unity.RenderPipelines.Lightweight.Runtime",
-    "references": [
-        "GUID:d60799ab2a985554ea1a39cd38695018",
-        "GUID:df380645f10b7bc4b97d4f5eb6303d95",
-        "GUID:855bcba30f8d4a9469a49269ade73231"
-    ],
+    "name": "Unity.VoxelizedShadows.Runtime",
+    "references": [],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],

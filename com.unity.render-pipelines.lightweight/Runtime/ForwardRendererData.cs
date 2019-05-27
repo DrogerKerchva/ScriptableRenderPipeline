@@ -5,11 +5,11 @@ using UnityEditor.ProjectWindowCallback;
 using System;
 
 namespace UnityEngine.Rendering.LWRP
-{    
+{
     public class ForwardRendererData : ScriptableRendererData
     {
 #if UNITY_EDITOR
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
         internal class CreateForwardRendererAsset : EndNameEditAction
         {
             public override void Action(int instanceId, string pathName, string resourceFile)
@@ -38,7 +38,12 @@ namespace UnityEngine.Rendering.LWRP
 
             [SerializeField, Reload("Shaders/Utils/ScreenSpaceShadows.shader")]
             public Shader screenSpaceShadowPS;
-        
+
+            //seongdae;vxsm
+            [SerializeField, Reload("Shaders/Utils/ScreenSpaceShadows.compute")]
+            public ComputeShader screenSpaceShadowCS;
+            //seongdae;vxsm
+
             [SerializeField, Reload("Shaders/Utils/Sampling.shader")]
             public Shader samplingPS;
         }

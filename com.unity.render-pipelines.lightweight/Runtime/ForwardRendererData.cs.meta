@@ -9,6 +9,8 @@ MonoImporter:
   - m_ScreenSpaceShadowShader: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd,
       type: 3}
   - m_SamplingShader: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
+  - m_ScreenSpaceShadowComputeShader: {fileID: 7200000, guid: 719209f057b15dc4cb586ec3fac4a2d4,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
